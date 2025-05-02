@@ -1,0 +1,7 @@
+.cart-item-number{
+    transform: translate(-60%, -80%);
+    background-color: tomato;
+}
+.active{
+    color:tomato !important;
+}

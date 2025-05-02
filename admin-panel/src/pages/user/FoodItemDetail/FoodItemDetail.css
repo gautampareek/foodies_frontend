@@ -1,0 +1,9 @@
+.transition-image {
+    border-radius: 12px;         /* Rounded corners */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth animation */
+  }
+  
+  .transition-image:hover {
+    transform: scale(1.03);      /* Slight zoom */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Soft shadow */
+  }
