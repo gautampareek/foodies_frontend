@@ -2,6 +2,8 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 
 const FOOD_REST_API_BASE_URL = 'http://localhost:8080/api/foods';
+const USER_REST_API_BASE_URL = 'http://localhost:8080/api/user';
+
 export const addFoodItem = async (formData) => axios.post(FOOD_REST_API_BASE_URL,formData,{headers:{"Content-Type":"multipart/form-data"}});
 export const getFoodList = async () => axios.get(FOOD_REST_API_BASE_URL);
 export const deleteFoodItem = async (id) => axios.delete(`${FOOD_REST_API_BASE_URL}/${id}`);

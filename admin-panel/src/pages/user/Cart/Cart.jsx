@@ -5,19 +5,23 @@ import { StoreContext } from '../../../context/StoreContext';
 import { assets } from '../../../assets/assets';
 import { toast } from 'react-toastify';
 import { calculateCartTotals } from '../../../util/CartUtil';
+import { deleteFullItem } from '../../../services/CartService';
 
 const Cart = () => {
-    const {foodList, increaseQty, decreaseQty, quantities,setQuantities} = useContext(StoreContext);
+    const {foodList, increaseQty, decreaseQty, quantities,setQuantities,token} = useContext(StoreContext);
     const cartItems = foodList.filter(food => quantities[food.id] > 0);
    const {subTotal,shiping,tax,total} = calculateCartTotals(cartItems,quantities); 
 
-    const handleRemove = (id) =>{
-        setQuantities(prev => {
-            const updatedQty = {...prev};
-            delete updatedQty[id];
-            toast.warn("Item removed from cart");
-            return updatedQty;
-        });
+    const handleRemove = async (id) =>{
+        try{
+            console.log(token,id)
+        const response = await deleteFullItem(id,token);
+        setQuantities(response.data.items);
+        toast.info("Item removed from cart");
+        }catch(error){
+            toast.error('Something went wrong. Please try again');
+            console.log('error while removing full item from cart',error);
+        }
     }
   return (
     <div className="container py-5">

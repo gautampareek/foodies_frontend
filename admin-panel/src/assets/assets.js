@@ -13,9 +13,11 @@ import salad from './salad.jpg'
 import shake from './shake.jpg'
 import other from './other.jpg'
 import cartEmpty from './emptyCart.jpg'
+import background from './background.jpg'
+import profile from './profile.png'
 
 export const assets = {
-    logo,parcel,upload,cart,contact,cartEmpty
+    logo,parcel,upload,cart,contact,cartEmpty,background,profile
 };
 export const categories = [
     {

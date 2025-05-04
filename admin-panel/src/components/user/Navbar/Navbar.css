@@ -5,3 +5,6 @@
 .active{
     color:tomato !important;
 }
+.dropdown-menu li{
+    cursor: pointer;
+}
