@@ -15,9 +15,11 @@ import other from './other.jpg'
 import cartEmpty from './emptyCart.jpg'
 import background from './background.jpg'
 import profile from './profile.png'
+import order from './order.jpg'
+import header from './bgimg.jpg'
 
 export const assets = {
-    logo,parcel,upload,cart,contact,cartEmpty,background,profile
+    logo,parcel,upload,cart,contact,cartEmpty,background,profile,order,header
 };
 export const categories = [
     {
