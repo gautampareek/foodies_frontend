@@ -39,3 +39,13 @@ export const deleteFullItem = async (foodId,token)=>{
        throw error;
     }
 };
+export const clearCart = async (token)=>{
+    try{
+        debugger;
+    const response = await axios.delete(CART_REST_API_BASE_URL
+        ,{headers :{'Authorization':`Bearer ${token}`}});
+        return response;
+    }catch(error){
+       throw error;
+    }
+};

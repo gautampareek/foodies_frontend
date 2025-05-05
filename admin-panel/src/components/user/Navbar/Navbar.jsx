@@ -37,14 +37,14 @@ const NavBar = () => {
           <div className="d-flex align-item-center gap-4">
             <Link to={"/cart"}>
               <div className="position-relative">
-                <img src={assets.cart} height={32} width={32} alt="cart" className='position-relative' />
+                <img src={assets.cart} height={28} width={28} alt="cart" className='position-relative' />
                 <span className='postion-absolute top-0 start-100 badge rounded-pill cart-item-number'>{Object.values(quantities).filter(qty => qty > 0).length}  </span>
               </div>
             </Link>
             {!token ? (
               <>
-                <Link className='btn btn-primary' to="/login">Login</Link>
-                <Link className='btn btn-outline-dark' to="/register">Register</Link>
+                <Link className='btn btn-primary btn-sm' to="/login">Login</Link>
+                <Link className='btn btn-outline-dark btn-sm' to="/register">Register</Link>
               </>
             )
               : (
@@ -53,7 +53,7 @@ const NavBar = () => {
                   <img src={assets.profile} alt='' height={32} width={32} className='rounded-circle' />
                   </a>
                   <ul className='dropdown-menu dropdown-menu-end text-small'>
-                    <li className='dropdown-item' onClick={() => navigate('/myOrders')}>Orders</li>
+                    <li className='dropdown-item' onClick={() => navigate('/myOrder')}>Orders</li>
                     <li className='dropdown-item' onClick={logout}>logout</li>
                   </ul>
                 </div>
